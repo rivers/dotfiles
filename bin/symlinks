@@ -1,0 +1,39 @@
+#!/bin/bash
+#
+basedir="$(cd "$(dirname "$0")/.." && pwd)"
+
+# Require user verification for all symlinks and overwrite existing symlinks if
+# necessary
+#
+symlink_prompt() {
+  dest="$basedir/$1"
+  cmd="ln -sf ${dest} ~/$2"
+
+  read -p "$cmd [Yn] " -r
+  if [[ ! $REPLY =~ ^[Nn]$ ]]
+  then
+    eval $cmd
+  else
+    printf "skipped\n"
+  fi
+}
+
+dotfiles=(
+  .ackrc
+  .bash_profile
+  .bash_prompt
+  .curlrc
+  .gemrc
+  .gitconfig
+  .gitignore
+  .gvimrc
+  .hushlogin
+  .rspec
+  .vimrc
+)
+
+for file in "${dotfiles[@]}"; do
+  symlink_prompt $file;
+done
+
+symlink_prompt vim.colors/vilight.vim .vim/colors

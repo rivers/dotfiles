@@ -1,0 +1,19 @@
+[include]
+  path = ~/.gitconfig.local # import local config, if present
+[core]
+  excludesfile = ~/.gitignore # global ignores
+  trustctime = false # ignore ctime differences between index and working tree
+  whitespace = space-before-tab,trailing-space # notice whitespace problems
+  editor = vim
+[diff]
+  renames = copies # detect renames and copies
+[color]
+  ui = auto # enable color in output (superset of diff/status/branch)
+[push]
+  default = simple # same as upstream with extra safety check
+[apply]
+  whitespace = warn # apply patch as-is with whitespace warnings
+[rerere]
+  enabled = true # record conflict resolution
+[log]
+  decorate = short # don't show ref prefixes

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Start SizeUp at login
+defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
+
+# Don’t show the SizeUp preferences window on next start
+defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
+
+killall SizeUp &> /dev/null

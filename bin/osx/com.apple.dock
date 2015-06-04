@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
+# Move dock to the right edge of the screen
+defaults write com.apple.dock orientation -string right
+
+# Change dock icon size
+defaults write com.apple.dock tilesize -int 32
+
+# Hot corners
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+
+# Top right screen corner -> Desktop
+defaults write com.apple.dock wvous-tr-corner -int 4
+defaults write com.apple.dock wvous-tr-modifier -int 0
+
+# Bottom left screen corner -> Application windows
+defaults write com.apple.dock wvous-bl-corner -int 3
+defaults write com.apple.dock wvous-bl-modifier -int 0
+
+killall Dock
