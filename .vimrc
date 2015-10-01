@@ -81,6 +81,9 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " Execute current file
 nnoremap <leader>r :!%:p<Enter>
 
+" Disable ex mode
+nnoremap Q <nop>
+
 " List chars
 set list!                  " Show invisible characters
 set listchars=""           " Reset the listchars
