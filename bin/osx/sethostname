@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Mostly just a reminder to do this during setup
+
+read -p "Set hostname? [Yn] " -r
+if [[ ! $REPLY =~ ^[Nn]$ ]]
+then
+  read -p "Hostname: " -r
+  sudo scutil --set HostName $REPLY
+else
+  printf "skipped\n"
+fi
