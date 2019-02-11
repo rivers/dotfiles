@@ -36,4 +36,5 @@ for file in "${dotfiles[@]}"; do
   symlink_prompt $file;
 done
 
-symlink_prompt vim.colors/vilight.vim .vim/colors
+mkdir -p ~/.vim/colors
+symlink_prompt vim.colors/vilight.vim .vim/colors/
