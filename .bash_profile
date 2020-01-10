@@ -11,6 +11,8 @@ export HISTCONTROL=erasedups
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 export CLICOLOR=1
 export GREP_OPTIONS="--color"
 export LESS="--RAW-CONTROL-CHARS --no-init --quit-if-one-screen"
